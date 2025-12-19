@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Web Local</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+<style>
+    body { font-family: sans-serif; padding: 50px; line-height: 1.6; }
+    .card { border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+    button { cursor: pointer; border: none; padding: 10px 15px; border-radius: 4px; color: white; font-weight: bold; }
+    button:hover { opacity: 0.9; }
+    
+    /* Class cho trạng thái */
+    .status-loading { color: blue; font-weight: bold; }
+    .status-success { color: green; font-weight: bold; }
+    .status-error   { color: red; font-weight: bold; }
+
+    /* Style cho đồng hồ đếm ngược */
+.timer-box {
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1.2em;
+}
+.timer-waiting { background-color: #fff3cd; color: #856404; border-color: #ffeeba; } /* Vàng: Chưa bắt đầu */
+.timer-running { background-color: #d4edda; color: #155724; border-color: #c3e6cb; } /* Xanh: Đang chạy */
+.timer-ended   { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; } /* Đỏ: Hết giờ */
+
+#timer-count { font-weight: bold; font-size: 1.5em; display: block; margin-top: 5px;}
+</style>
+
+
+</head>
+<body>
+    <h1>Hệ thống Bầu cử (Local)</h1>
+    <p>Trạng thái hệ thống: <span id="status" class="status-loading">Đang chờ lệnh...</span></p>
+    
+    <div style="background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+    <h3>Khu vực giả lập Admin</h3>
+    <button onclick="setupVoter()" style="background: #007bff;">1. Cấp quyền Voter cho Account #1</button>
+    <button onclick="setupTime()" style="background: #6c757d;">2. Mở cửa bầu chọn (Timestamp)</button>
+    <div id="votingTimer" class="timer-box timer-waiting">
+        <span id="timer-status">Đang tải dữ liệu thời gian...</span>
+        <span id="timer-count">--:--:--</span>
+    </div>
+</div>
+    <div id="candidateList">
+        
+        </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
