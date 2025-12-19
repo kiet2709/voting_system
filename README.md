@@ -1,226 +1,49 @@
-Để hoàn thiện project này, một file README.md chuyên nghiệp sẽ giúp bạn (hoặc bất kỳ ai xem code) hiểu rõ cách vận hành, cấu trúc và giá trị của nó. Tôi đã soạn sẵn nội dung dưới đây, tập trung vào tính thực tế và dễ hiểu.
+# Secure Decentralized Voting
 
-🗳️ Hệ thống Bầu cử Phi tập trung (Local DApp)
-Một ứng dụng bầu cử (Voting System) chạy trên nền tảng Blockchain, được tối ưu hóa để chạy và thử nghiệm hoàn toàn trên máy tính cá nhân (Localhost) mà không cần cài đặt thêm ví ngoài như MetaMask.
+**Trường Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh**
 
-🚀 Tính năng chính
-Blockchain-based: Dữ liệu phiếu bầu được lưu trữ minh bạch trên mạng Hardhat Local.
+**Khoa Công nghệ thông tin** 
 
-Role-based Access Control: Phân quyền rõ ràng (Admin có quyền cấp phép, User có quyền bầu).
+**Giảng viên hướng dẫn:** TS. Huỳnh Xuân Phụng
 
-Voting Window: Thiết lập thời gian bắt đầu và kết thúc bầu cử trực tiếp từ giao diện.
+**Nhóm thực hiện:** Nhóm 6
 
-Real-time Countdown: Đồng hồ đếm ngược thông minh, tự động chuyển đổi trạng thái (Chưa bắt đầu -> Đang diễn ra -> Kết thúc).
+---
 
-Smart Error Handling: Hệ thống bắt lỗi và thông báo tiếng Việt thân thiện khi người dùng vi phạm quy tắc bầu cử.
+## Thành viên nhóm
 
-🛠️ Công nghệ sử dụng
-Ngôn ngữ Smart Contract: Solidity.
+| MSSV        | Họ tên                  |
+| :---------- | :---------------------- |
+| **2591302** | **Nguyễn Thanh Bình**   |
+| **2591303** | **Huỳnh Đình Hiệp**     |
+| **2591311** | **Lê Nguyễn Tuấn Kiệt** |
+| **2591322** | **Trần Minh Sang**      |
 
-Môi trường phát triển: Hardhat.
+---
 
-Thư viện kết nối Web3: Ethers.js (v6).
+# 🗳️ Hệ thống Bầu cử Phi tập trung (Local DApp)
 
-Giao diện: HTML5, CSS3, JavaScript thuần (Vanilla JS).
+Ứng dụng bầu cử chạy trên Blockchain, được thiết kế để **chạy hoàn toàn trên Localhost** bằng Hardhat.  
 
-📁 Cấu trúc thư mục
-Plaintext
+---
 
-.
-├── contracts/           # Chứa Smart Contract (RoleBasedVoting.sol)
-├── scripts/             # Chứa script deploy (deploy.js)
-├── frontend/            # Giao diện người dùng
-│   ├── index.html       # Cấu trúc giao diện
-│   └── app.js           # Logic kết nối Blockchain & Countdown
-├── hardhat.config.js    # Cấu hình Hardhat
-└── README.md            # Hướng dẫn này
-🛠️ Hướng dẫn cài đặt và khởi chạy
-Bước 1: Khởi động mạng Blockchain nội bộ
-Mở một terminal tại thư mục gốc của dự án và chạy lệnh:
+## 🚀 Tính năng
 
-Bash
+- **Blockchain-based**: Phiếu bầu được lưu trữ minh bạch trên Hardhat Local
+- **Role-based Access Control**:
+  - Admin: cấp quyền voter, mở/đóng bầu cử
+  - User: tham gia bỏ phiếu
+- **Voting Window**: Thiết lập thời gian bắt đầu / kết thúc bầu cử
+- **Real-time Countdown**: Đồng hồ đếm ngược tự động đổi trạng thái
+- **Thông báo lỗi tiếng Việt** khi vi phạm luật bầu cử
 
-npx hardhat node
-Giữ terminal này chạy xuyên suốt quá trình thử nghiệm. Hệ thống sẽ cấp cho bạn 20 tài khoản giả lập.
+---
 
-Bước 2: Deploy Smart Contract
-Mở một terminal mới (không tắt terminal cũ) và chạy:
+## 🛠️ Công nghệ sử dụng
 
-Bash
+- Smart Contract: **Solidity**
+- Blockchain Dev: **Hardhat**
+- Web3: **Ethers.js v6**
+- Frontend: **HTML, CSS, Vanilla JavaScript**
 
-npx hardhat run scripts/deploy.js --network localhost
-Lưu lại địa chỉ Contract address hiện ra trên terminal.
-
-Bước 3: Cấu hình Giao diện
-Mở file frontend/app.js.
-Để hoàn thiện project này, một file README.md chuyên nghiệp sẽ giúp bạn (hoặc bất kỳ ai xem code) hiểu rõ cách vận hành, cấu trúc và giá trị của nó. Tôi đã soạn sẵn nội dung dưới đây, tập trung vào tính thực tế và dễ hiểu.
-
-🗳️ Hệ thống Bầu cử Phi tập trung (Local DApp)
-Một ứng dụng bầu cử (Voting System) chạy trên nền tảng Blockchain, được tối ưu hóa để chạy và thử nghiệm hoàn toàn trên máy tính cá nhân (Localhost) mà không cần cài đặt thêm ví ngoài như MetaMask.
-
-🚀 Tính năng chính
-Blockchain-based: Dữ liệu phiếu bầu được lưu trữ minh bạch trên mạng Hardhat Local.
-
-Role-based Access Control: Phân quyền rõ ràng (Admin có quyền cấp phép, User có quyền bầu).
-
-Voting Window: Thiết lập thời gian bắt đầu và kết thúc bầu cử trực tiếp từ giao diện.
-
-Real-time Countdown: Đồng hồ đếm ngược thông minh, tự động chuyển đổi trạng thái (Chưa bắt đầu -> Đang diễn ra -> Kết thúc).
-
-Smart Error Handling: Hệ thống bắt lỗi và thông báo tiếng Việt thân thiện khi người dùng vi phạm quy tắc bầu cử.
-
-🛠️ Công nghệ sử dụng
-Ngôn ngữ Smart Contract: Solidity.
-
-Môi trường phát triển: Hardhat.
-
-Thư viện kết nối Web3: Ethers.js (v6).
-
-Giao diện: HTML5, CSS3, JavaScript thuần (Vanilla JS).
-
-📁 Cấu trúc thư mục
-Plaintext
-
-.
-├── contracts/           # Chứa Smart Contract (RoleBasedVoting.sol)
-├── scripts/             # Chứa script deploy (deploy.js)
-├── frontend/            # Giao diện người dùng
-│   ├── index.html       # Cấu trúc giao diện
-│   └── app.js           # Logic kết nối Blockchain & Countdown
-├── hardhat.config.js    # Cấu hình Hardhat
-└── README.md            # Hướng dẫn này
-🛠️ Hướng dẫn cài đặt và khởi chạy
-Bước 1: Khởi động mạng Blockchain nội bộ
-Mở một terminal tại thư mục gốc của dự án và chạy lệnh:
-
-Bash
-
-npx hardhat node
-Giữ terminal này chạy xuyên suốt quá trình thử nghiệm. Hệ thống sẽ cấp cho bạn 20 tài khoản giả lập.
-
-Bước 2: Deploy Smart Contract
-Mở một terminal mới (không tắt terminal cũ) và chạy:
-
-Bash
-
-npx hardhat run scripts/deploy.js --network localhost
-Lưu lại địa chỉ Contract address hiện ra trên terminal.
-
-Bước 3: Cấu hình Giao diện
-Mở file frontend/app.js.
-
-Dán địa chỉ Contract vừa copy vào biến CONTRACT_ADDRESS.
-
-Lấy một Private Key từ terminal ở Bước 1 dán vào ADMIN_PRIVATE_KEY và một cái khác vào USER_PRIVATE_KEY.
-
-Bước 4: Chạy Ứng dụng
-Để tránh lỗi bảo mật (CORS), hãy mở index.html bằng Live Server (trong VS Code) hoặc dùng lệnh:
-
-Bash
-
-npx serve .
-🎮 Kịch bản mô phỏng (Demo)
-Kiểm tra trạng thái: Lúc mới mở, đồng hồ sẽ báo "Chưa thiết lập thời gian".
-
-Cấp quyền: Nhấn nút "1. Cấp quyền Voter" để Admin cấp phép cho Account #1.
-
-Mở cửa: Nhấn nút "2. Mở cửa bầu chọn". Đồng hồ sẽ chuyển sang màu xanh và đếm ngược 5 phút.
-
-Bỏ phiếu: Nhấn "Bầu ngay" cho ứng viên bạn thích. Hệ thống sẽ cập nhật số phiếu ngay lập tức.
-
-Thử sai: Thử bầu lần thứ 2 hoặc đợi đồng hồ về 0 rồi mới bầu để xem thông báo lỗi tiếng Việt thông minh.
-Dán địa chỉ Contract vừa copy vào biến CONTRACT_ADDRESS.
-
-Lấy một Private Key từ terminal ở Bước 1 dán vào ADMIN_PRIVATE_KEY và một cái khác vào USER_PRIVATE_KEY.
-
-Bước 4: Chạy Ứng dụng
-Để tránh lỗi bảo mật (CORS), hãy mở index.html bằng Live Server (trong VS Code) hoặc dùng lệnh:kĐể hoàn thiện project này, một file README.md chuyên nghiệp sẽ giúp bạn (hoặc bất kỳ ai xem code) hiểu rõ cách vận hành, cấu trúc và giá trị của nó. Tôi đã soạn sẵn nội dung dưới đây, tập trung vào tính thực tế và dễ hiểu.
-
-🗳️ Hệ thống Bầu cử Phi tập trung (Local DApp)
-Một ứng dụng bầu cử (Voting System) chạy trên nền tảng Blockchain, được tối ưu hóa để chạy và thử nghiệm hoàn toàn trên máy tính cá nhân (Localhost) mà không cần cài đặt thêm ví ngoài như MetaMask.
-
-🚀 Tính năng chính
-Blockchain-based: Dữ liệu phiếu bầu được lưu trữ minh bạch trên mạng Hardhat Local.
-
-Role-based Access Control: Phân quyền rõ ràng (Admin có quyền cấp phép, User có quyền bầu).
-
-Voting Window: Thiết lập thời gian bắt đầu và kết thúc bầu cử trực tiếp từ giao diện.
-
-Real-time Countdown: Đồng hồ đếm ngược thông minh, tự động chuyển đổi trạng thái (Chưa bắt đầu -> Đang diễn ra -> Kết thúc).
-
-Smart Error Handling: Hệ thống bắt lỗi và thông báo tiếng Việt thân thiện khi người dùng vi phạm quy tắc bầu cử.
-
-🛠️ Công nghệ sử dụng
-Ngôn ngữ Smart Contract: Solidity.
-
-Môi trường phát triển: Hardhat.
-
-Thư viện kết nối Web3: Ethers.js (v6).
-
-Giao diện: HTML5, CSS3, JavaScript thuần (Vanilla JS).
-
-📁 Cấu trúc thư mục
-Plaintext
-
-.
-├── contracts/           # Chứa Smart Contract (RoleBasedVoting.sol)
-├── scripts/             # Chứa script deploy (deploy.js)
-├── frontend/            # Giao diện người dùng
-│   ├── index.html       # Cấu trúc giao diện
-│   └── app.js           # Logic kết nối Blockchain & Countdown
-├── hardhat.config.js    # Cấu hình Hardhat
-└── README.md            # Hướng dẫn này
-🛠️ Hướng dẫn cài đặt và khởi chạy
-Bước 1: Khởi động mạng Blockchain nội bộ
-Mở một terminal tại thư mục gốc của dự án và chạy lệnh:
-
-Bash
-
-npx hardhat node
-Giữ terminal này chạy xuyên suốt quá trình thử nghiệm. Hệ thống sẽ cấp cho bạn 20 tài khoản giả lập.
-
-Bước 2: Deploy Smart Contract
-Mở một terminal mới (không tắt terminal cũ) và chạy:
-
-Bash
-
-npx hardhat run scripts/deploy.js --network localhost
-Lưu lại địa chỉ Contract address hiện ra trên terminal.
-
-Bước 3: Cấu hình Giao diện
-Mở file frontend/app.js.
-
-Dán địa chỉ Contract vừa copy vào biến CONTRACT_ADDRESS.
-
-Lấy một Private Key từ terminal ở Bước 1 dán vào ADMIN_PRIVATE_KEY và một cái khác vào USER_PRIVATE_KEY.
-
-Bước 4: Chạy Ứng dụng
-Để tránh lỗi bảo mật (CORS), hãy mở index.html bằng Live Server (trong VS Code) hoặc dùng lệnh:
-
-Bash
-
-npx serve .
-🎮 Kịch bản mô phỏng (Demo)
-Kiểm tra trạng thái: Lúc mới mở, đồng hồ sẽ báo "Chưa thiết lập thời gian".
-
-Cấp quyền: Nhấn nút "1. Cấp quyền Voter" để Admin cấp phép cho Account #1.
-
-Mở cửa: Nhấn nút "2. Mở cửa bầu chọn". Đồng hồ sẽ chuyển sang màu xanh và đếm ngược 5 phút.
-
-Bỏ phiếu: Nhấn "Bầu ngay" cho ứng viên bạn thích. Hệ thống sẽ cập nhật số phiếu ngay lập tức.
-
-Thử sai: Thử bầu lần thứ 2 hoặc đợi đồng hồ về 0 rồi mới bầu để xem thông báo lỗi tiếng Việt thông minh.
-
-Bash
-
-npx serve .
-🎮 Kịch bản mô phỏng (Demo)
-Kiểm tra trạng thái: Lúc mới mở, đồng hồ sẽ báo "Chưa thiết lập thời gian".
-
-Cấp quyền: Nhấn nút "1. Cấp quyền Voter" để Admin cấp phép cho Account #1.
-
-Mở cửa: Nhấn nút "2. Mở cửa bầu chọn". Đồng hồ sẽ chuyển sang màu xanh và đếm ngược 5 phút.
-
-Bỏ phiếu: Nhấn "Bầu ngay" cho ứng viên bạn thích. Hệ thống sẽ cập nhật số phiếu ngay lập tức.
-
-Thử sai: Thử bầu lần thứ 2 hoặc đợi đồng hồ về 0 rồi mới bầu để xem thông báo lỗi tiếng Việt thông minh.
+---
